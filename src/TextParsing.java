@@ -12,19 +12,16 @@ public class TextParsing {
         System.out.print("Input: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String[] pathAndText = reader.readLine().strip().split(" ");
-
         Path path = Paths.get(pathAndText[0]);
         String text = pathAndText[1];
-
         String input = Files.readString(path);
-        Pattern pattern = Pattern.compile(text + "(\\w*)");
+        Pattern pattern = Pattern.compile("(\\w*)" + text + "(\\w*)");
         Matcher matcher = pattern.matcher(input);
         int count = 0;
         while(matcher.find()) {
             count++;
         }
-
-//        System.out.println(input);
         System.out.println("Output: " + count);
+        reader.close();
     }
 }

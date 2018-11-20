@@ -10,32 +10,28 @@ public class Calculator {
         if (expression.contains("+")) {
             index = expression.indexOf("+");
             int a = Integer.parseInt(expression.substring(0, index));
-            int b = Integer.parseInt(expression.substring(index + 1, expression.length()));
-            System.out.println(a);
-            System.out.println(b);
+            int b = Integer.parseInt(expression.substring(index + 1));
             System.out.println("Output: " + (a+b));
         }
         else {
             if (expression.contains("-")) {
                 index = expression.indexOf("-");
                 int a = Integer.parseInt(expression.substring(0, index));
-                int b = Integer.parseInt(expression.substring(index + 1, expression.length()));
-                System.out.println(a);
-                System.out.println(b);
+                int b = Integer.parseInt(expression.substring(index + 1));
                 System.out.println("Output: " + (a-b));
             }
             else {
                 if (expression.contains("*")){
                     index = expression.indexOf("*");
                     int a = Integer.parseInt(expression.substring(0, index));
-                    int b = Integer.parseInt(expression.substring(index + 1, expression.length()));
+                    int b = Integer.parseInt(expression.substring(index + 1));
                     System.out.println("Output: " + (a*b));
                 }
                 else {
                     if (expression.contains("/")) {
                         index = expression.indexOf("/");
                         int a = Integer.parseInt(expression.substring(0, index));
-                        int b = Integer.parseInt(expression.substring(index + 1, expression.length()));
+                        int b = Integer.parseInt(expression.substring(index + 1));
                         System.out.println("Output: " + (a/b) + " ost - " + (a % b));
 
                     }
@@ -45,5 +41,6 @@ public class Calculator {
                 }
             }
         }
+        reader.close();
     }
 }
